@@ -1,0 +1,37 @@
+name: Cloudflare Cache Purge
+description: Purge Cloudflare cache with GitHub Actions
+author: Seilinux IT Solutions
+branding:
+  icon: cloudflare
+  color: orange
+
+  inputs:      
+    zone_id:
+      description: "Cloudflare Zone ID"
+      required: true
+      secret: true
+    api_token:
+      description: "Cloudflare API Token"
+      required: false
+      secret: true
+    email:
+      description: "Cloudflare Email"
+      required: false
+      secret: true
+    key:
+      description: "Cloudflare API Key"
+      required: false
+      secret: true
+    hosts:
+      description: "Flex purge with hosts, use commas to separate"
+      required: false
+    tags:
+      description: "Flex purge with tags, use commas to separate"
+      required: false
+    prefixes:
+      description: "Flex purge with prefixes, use commas to separate"
+      required: false
+
+  runs:
+    using: "node20"
+    main: "src/index.js"
