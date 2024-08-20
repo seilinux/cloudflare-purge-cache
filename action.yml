@@ -1,0 +1,34 @@
+name: 'Cloudflare Cache Purge'
+description: "GitHub Action to purge cached content via the Cloudflare API"
+author: Seilinux IT Solutions
+
+branding:
+  icon: cloud
+  color: orange
+
+inputs:      
+  zone_id:
+    description: "Cloudflare Zone ID"
+    required: true   
+  api_token:
+    description: "Cloudflare API Token"
+    required: false    
+  email:
+    description: "Cloudflare Email"
+    required: false    
+  key:
+    description: "Cloudflare API Key"
+    required: false    
+  hosts:
+    description: "Flex purge with hosts, use commas to separate"
+    required: false
+  tags:
+    description: "Flex purge with tags, use commas to separate"
+    required: false
+  prefixes:
+    description: "Flex purge with prefixes, use commas to separate"
+    required: false
+
+runs:
+  using: "node20"
+  main: "src/index.js"
