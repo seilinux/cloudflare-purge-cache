@@ -6,6 +6,11 @@ function getAuthenticationType() {
     const email = core.getInput("email");
     const key = core.getInput("key");
 
+    console.log("Inputs Received:");
+    console.log("api_token:", api_token);
+    console.log("email:", email);
+    console.log("key:", key);
+
     if (api_token.length || (email.length && key.length)) {
       return;
     } else {
